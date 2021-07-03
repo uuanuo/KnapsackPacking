@@ -5,10 +5,10 @@ from problem_solution import Solution, get_bounds
 from common_algorithm_functions import get_index_after_weight_limit, get_time_since
 
 # default maximum number of iterations for the reversible algorithm
-MAX_ITER_NUM = 1000
+MAX_ITER_NUM = 10000
 
 # default maximum number of iterations without any addition to perform early stopping
-MAX_ITER_NUM_WITHOUT_ADDITIONS = 30
+MAX_ITER_NUM_WITHOUT_ADDITIONS = 300
 
 # default number of iterations to revert a removal operation if it has not increased the value in the container
 ITER_NUM_TO_REVERT_REMOVAL = 10

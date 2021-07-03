@@ -9,16 +9,16 @@ from common_algorithm_functions import get_index_after_weight_limit, get_time_si
 VALUE_WEIGHT = 0.3
 
 # default weight of the area in the weighted product of item's weight and area; the weight's weight is 1-AREA_WEIGHT
-AREA_WEIGHT = 0.9
+AREA_WEIGHT = 0.8
 
 # default maximum number of iterations for the greedy algorithm
-MAX_ITER_NUM = 1000
+MAX_ITER_NUM = 10000
 
 # default maximum number of iterations without any change to perform early stopping
-MAX_ITER_NUM_WITHOUT_CHANGES = 30
+MAX_ITER_NUM_WITHOUT_CHANGES = 300
 
 # default number of repetitions of the algorithm
-REPETITION_NUM = 5
+REPETITION_NUM = 2
 
 # whether the constant score can be used if explicitely indicated
 CAN_USE_CONSTANT_SCORE = False

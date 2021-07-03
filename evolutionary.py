@@ -13,7 +13,7 @@ from shape_functions import get_bounds, create_random_polygon, do_shapes_interse
     create_random_quadrilateral_in_rectangle_corners
 
 # size of the population
-POPULATION_SIZE = 100
+POPULATION_SIZE = 300
 
 # size of the offspring population created in each generation
 OFFSPRING_SIZE = POPULATION_SIZE * 2
@@ -97,7 +97,7 @@ CROSSOVER_MIN_FITNESS_FOR_NON_BEST_PROPORTION = 0.95
 CROSSOVER_SHAPE_MIN_AREA_PROPORTION = 0.1
 
 # maximum number of generations
-MAX_GENERATION_NUM = 10
+MAX_GENERATION_NUM = 100
 
 # maximum number of generations to assume that algorithm has converged
 CONVERGE_GENERATION_NUM = 20
