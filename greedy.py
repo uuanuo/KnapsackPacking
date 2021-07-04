@@ -9,7 +9,7 @@ from common_algorithm_functions import get_index_after_weight_limit, get_time_si
 VALUE_WEIGHT = 0.3
 
 # default weight of the area in the weighted product of item's weight and area; the weight's weight is 1-AREA_WEIGHT
-AREA_WEIGHT = 0.8
+AREA_WEIGHT = 0.5
 
 # default maximum number of iterations for the greedy algorithm
 MAX_ITER_NUM = 10000
@@ -73,9 +73,14 @@ def select_item(items_with_profit_ratio):
     return lowest
 
 
-def solve_problem(problem, greedy_score_function=get_weighted_sum_of_item_value_and_profitability_ratio, value_weight=VALUE_WEIGHT, area_weight=AREA_WEIGHT, max_iter_num=MAX_ITER_NUM, max_iter_num_without_changes=MAX_ITER_NUM_WITHOUT_CHANGES, repetition_num=REPETITION_NUM, item_index_to_place_first=20, item_index_to_place_2=21, item_index_to_place_3=22, item_index_to_place_4=23, item_index_to_place_5=24, item_specialization_iter_proportion=5., calculate_times=False, return_value_evolution=False):
+def solve_problem(problem, greedy_score_function=get_weighted_sum_of_item_value_and_profitability_ratio, value_weight=VALUE_WEIGHT, area_weight=AREA_WEIGHT, max_iter_num=MAX_ITER_NUM, max_iter_num_without_changes=MAX_ITER_NUM_WITHOUT_CHANGES, repetition_num=REPETITION_NUM, item_index_to_place_first=20, item_specialization_iter_proportion=5., calculate_times=False, return_value_evolution=False):
 
     """Find and return a solution to the passed problem, using a greedy strategy"""
+
+    item_index_to_place_2 = 21
+    item_index_to_place_3 = 22
+    item_index_to_place_4 = 23
+    item_index_to_place_5 = 24
 
     # determine the bounds of the container
     min_x, min_y, max_x, max_y = get_bounds(problem.container.shape)
@@ -151,18 +156,22 @@ def solve_problem(problem, greedy_score_function=get_weighted_sum_of_item_value_
                 elif item_index_to_place_2 >= 0 and 0.2 * max_iter_num > i > 0.1 * max_iter_num:
                     item_index = item_index_to_place_2
                     list_index = -2
+                    item_index_to_place_2 = -1
 
                 elif item_index_to_place_3 >= 0 and 0.3 * max_iter_num > i > 0.2 * max_iter_num:
                     item_index = item_index_to_place_3
                     list_index = -3
+                    item_index_to_place_3 = -1
 
                 elif item_index_to_place_4 >= 0 and 0.4 * max_iter_num > i > 0.3 * max_iter_num:
                     item_index = item_index_to_place_4
                     list_index = -4
+                    item_index_to_place_4 = -1
 
                 elif item_index_to_place_5 >= 0 and 0.5 * max_iter_num > i > 0.4 * max_iter_num:
                     item_index = item_index_to_place_5
                     list_index = -5
+                    item_index_to_place_5 = -1
 
                 # perform a random choice of the next item to try to place, weighting each item with their profitability ratio, that acts as an stochastic selection probability
                 else:
